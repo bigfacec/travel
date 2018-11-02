@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div class="app">
+  <todo-item v-bind:content="item" v-for='item in todoList'></todo-item>
+</div>
+
+</body>
+<script>
+  Vue.component("TodoItem",{
+    props:['content'],
+    template:"<li>{{content}}</li>"
+  })
+  new Vue({
+    el:'.app',
+    data:{
+      todoValue:'',
+      todoList:['起床','吃早饭','学习','吃午饭','睡午觉']
+    },
+  })
+</script>
+</html>
